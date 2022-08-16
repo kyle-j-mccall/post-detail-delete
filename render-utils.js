@@ -37,9 +37,9 @@ export function renderPosts(posts) {
         const contactEl = document.createElement('p');
         contactEl.textContent = post.contact;
 
-        li.append(titleEl, categoryEl, descriptionEl, contactEl);
+        link.append(titleEl, categoryEl, descriptionEl, contactEl);
 
-        link.append(li);
+        li.append(link);
 
         
 
@@ -60,6 +60,8 @@ export function renderDetailPost(post) {
     postDescription.textContent = post.description;
     contact.textContent = post.contact;
     deleteButton.textContent = 'delete';
+
+    div.classList.add('post-it');
 
     div.append(postTitleEl, postDescription, contact, deleteButton);
 

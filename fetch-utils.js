@@ -55,7 +55,7 @@ export async function getPost(id) {
     *,
     category: categories(*)`).match({ id }).single();
     
-    return response;
+    return response.data;
 }
 
 export async function createPost(post) {
