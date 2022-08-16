@@ -19,35 +19,8 @@ export function renderPosts(posts) {
         const li = document.createElement('li');
         li.classList.add('post-it');
 
-        const titleEl = document.createElement('h2');
-        titleEl.textContent = post.title;
-
-        const categoryEl = document.createElement('span');
-        categoryEl.classList.add('category');
-        categoryEl.title = post.category.name;
-        categoryEl.textContent = post.category.emoji;
-
-        const descriptionEl = document.createElement('p');
-        descriptionEl.classList.add('description');
-        descriptionEl.textContent = post.description;
-
-        const contactEl = document.createElement('p');
-        contactEl.textContent = post.contact;
-
-        li.append(titleEl, categoryEl, descriptionEl, contactEl);
-
-        fragment.append(li);
-    }
-
-    return fragment;
-}
-
-export function renderDetailPosts(posts) {
-    const fragment = document.createDocumentFragment();
-
-    for (const post of posts) {
-        const li = document.createElement('li');
-        li.classList.add('post-it');
+        const link = document.createElement('a');
+        link.href = `/details/?id=${post.id}`;
 
         const titleEl = document.createElement('h2');
         titleEl.textContent = post.title;
@@ -66,8 +39,31 @@ export function renderDetailPosts(posts) {
 
         li.append(titleEl, categoryEl, descriptionEl, contactEl);
 
+        link.append(li);
+
+        
+
         fragment.append(li);
     }
 
     return fragment;
 }
+
+export function renderDetailPost(post) {
+    const div = document.createElement('div');
+    const postTitleEl = document.createElement('h3');
+    const postDescription = document.createElement('p');
+    const contact = document.createElement('p');
+    const deleteButton = document.createElement('button');
+
+    postTitleEl.textContent = post.title;
+    postDescription.textContent = post.description;
+    contact.textContent = post.contact;
+    deleteButton.textContent = 'delete';
+
+    div.append(postTitleEl, postDescription, contact, deleteButton);
+
+    return div;
+}
+
+
