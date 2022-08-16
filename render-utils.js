@@ -1,3 +1,5 @@
+import { checkAuth, getUser } from "../fetch-utils.js";
+
 export function renderCategoryOptions(categories) {
     // document fragment is a "bag" for elements
     const fragment = document.createDocumentFragment();
@@ -49,7 +51,7 @@ export function renderPosts(posts) {
     return fragment;
 }
 
-export function renderDetailPost(post) {
+export function renderUserDetailPost(post) {
     const div = document.createElement('div');
     const postTitleEl = document.createElement('h3');
     const postDescription = document.createElement('p');
@@ -63,7 +65,34 @@ export function renderDetailPost(post) {
 
     div.classList.add('post-it');
 
+    
     div.append(postTitleEl, postDescription, contact, deleteButton);
+
+   
+
+
+    return div;
+}
+
+export function renderDetailPost(post) {
+    const div = document.createElement('div');
+    const postTitleEl = document.createElement('h3');
+    const postDescription = document.createElement('p');
+    const contact = document.createElement('p');
+    
+
+    postTitleEl.textContent = post.title;
+    postDescription.textContent = post.description;
+    contact.textContent = post.contact;
+    
+
+    div.classList.add('post-it');
+
+    
+    div.append(postTitleEl, postDescription, contact);
+
+   
+
 
     return div;
 }
