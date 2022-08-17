@@ -10,19 +10,25 @@ console.log(postId);
 const user = checkAuth();
 const loggedIn = getUser();
 
+
 async function displayDetailPost() {
     const post = await getPost(postId);
+    console.log(post.user_id);
     
-    if (user === loggedIn) {
-        const userDetailPost = renderUserDetailPost(post);
-        mainEl.append(userDetailPost);
-    } else {
+    if (user.id !== post.user_id) {
         const detailPost = renderDetailPost(post);
         mainEl.append(detailPost);
+        
+        
+    } else {
+        const userDetailPost = renderUserDetailPost(post);
+        mainEl.append(userDetailPost);
     }
     
 
 }
+
+
 
 
 

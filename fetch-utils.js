@@ -8,6 +8,8 @@ export function getUser() {
     return client.auth.user();
 }
 
+console.log(getUser());
+
 export function checkAuth() {
     const user = getUser();
     if (!user) location.replace(`/auth/?redirectUrl=${encodeURIComponent(location)}`);
