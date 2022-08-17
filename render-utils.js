@@ -1,4 +1,4 @@
-import { deletePost } from "../fetch-utils.js";
+import { deletePost } from '../fetch-utils.js';
 
 export function renderCategoryOptions(categories) {
     // document fragment is a "bag" for elements
