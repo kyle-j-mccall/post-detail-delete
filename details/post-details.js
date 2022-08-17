@@ -1,7 +1,7 @@
 
 
 
-import { getPost, checkAuth } from '../fetch-utils.j';
+import { getPost, checkAuth } from '../fetch-utils.js';
 
 import { renderDetailPost, renderUserDetailPost } from '../render-utils.js';
 
