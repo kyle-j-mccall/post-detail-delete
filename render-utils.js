@@ -1,4 +1,4 @@
-import { checkAuth, getUser } from "../fetch-utils.js";
+import { deletePost } from "../fetch-utils.js";
 
 export function renderCategoryOptions(categories) {
     // document fragment is a "bag" for elements
@@ -57,6 +57,11 @@ export function renderUserDetailPost(post) {
     const postDescription = document.createElement('p');
     const contact = document.createElement('p');
     const deleteButton = document.createElement('button');
+
+    deleteButton.addEventListener('click', async () => {
+        await deletePost(post.id);
+        location.href = `../`;
+    });
 
     postTitleEl.textContent = post.title;
     postDescription.textContent = post.description;

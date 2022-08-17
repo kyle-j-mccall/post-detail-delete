@@ -8,7 +8,7 @@ export function getUser() {
     return client.auth.user();
 }
 
-console.log(getUser());
+
 
 export function checkAuth() {
     const user = getUser();
@@ -26,6 +26,12 @@ export async function signInUser(email, password) {
 
 export async function signOutUser() {
     return await client.auth.signOut();
+}
+
+export async function deletePost(id) {
+    return await client.from('posts').delete().match({ id: id });
+
+    
 }
 
 /* Helper for logging errors */
