@@ -8,7 +8,7 @@ async function displayProfiles() {
     
     for (let profile of profiles) {
         const renderedProfile = renderProfile(profile);
-        renderedProfile.classList.add('post-it')
+        renderedProfile.classList.add('post-it');
         profilesContainer.append(renderedProfile);
     }
 }

@@ -1,6 +1,6 @@
 // importing other stuff, utility functions for:
 // working with supabase
-import { checkAuth, signOutUser, getPosts } from './fetch-utils.js';
+import { checkAuth, signOutUser, getPosts, getProfile } from './fetch-utils.js';
 // pure rendering (data --> DOM)
 import { renderPosts } from './render-utils.js';
 
@@ -29,6 +29,7 @@ viewUsersLink.addEventListener('click', () => {
 
 updateProfileLink.addEventListener('click', () => {
     window.location.replace('./update-profile');
+    
 });
 
 displayPosts();

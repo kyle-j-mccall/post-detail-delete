@@ -70,8 +70,14 @@ export async function createPost(post) {
     return await client.from('posts').insert(post);
 }
 
-export async function createProfile(profile) {
-    return await client.from('profiles').insert(profile);
+export async function getProfile(id) {
+    const response = await client.from('profiles').select('*').match({ id }).single();
+
+    return response;
+}
+
+export async function saveProfile(profile) {
+    return await client.from('profiles').upsert(profile);
 
     
 }
@@ -81,3 +87,5 @@ export async function getProfiles() {
 
     return checkError(response);
 }
+
+
