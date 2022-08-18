@@ -69,3 +69,15 @@ export async function getPost(id) {
 export async function createPost(post) {
     return await client.from('posts').insert(post);
 }
+
+export async function createProfile(profile) {
+    return await client.from('profiles').insert(profile);
+
+    
+}
+
+export async function getProfiles() {
+    const response = await client.from('profiles').select('*');
+
+    return checkError(response);
+}

@@ -21,11 +21,13 @@
 - rendered dynamically. Each user will use same render function
 
 ## Users page data
+- when profile is created it will be added to profiles in supabase
 - will require profiles table from supabase
 - will require user to have an account to view users page
 - will require user id to match uid
 
 ## Users Page plan
+- make createUser function in fetch-utils that adds user to profiles table
 - create getUsers function in fetch utils(no parameters)
 - create renderUserInfo function in render utils
 - create displayUsers function in users.js
