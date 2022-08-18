@@ -35,5 +35,25 @@
 - call renderUserInfo in loop
 - call displayUsers on load
 
+## Update Profile page
+
+## HTML Elements
+- Header
+- Form with username input, avatar input, bio input, and create/update profile button
+
+## Update profile data
+- fetch profile from supabase and check if that user is logged in
+- if user is not logged in. When they create profile add profile to profiles table
+
+## Plan
+- create form on update profile page
+- create a getProfile function in fetch utils that fetches a profile based on id
+- create a createProfile function that uses upsert to either update or insert profile data
+- when user navigates to update page call getProfile based on id and populate the form with user profile information
+- if user already has profile button should say update profile
+- user does not have profile form should be empty and button should say create profile
+- when user creates or updates profile call createProfile and add new or updated profile to supabase table
+- new or updated profile should be displayed on users page
+
 
 
