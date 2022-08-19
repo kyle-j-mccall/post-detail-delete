@@ -69,3 +69,23 @@ export async function getPost(id) {
 export async function createPost(post) {
     return await client.from('posts').insert(post);
 }
+
+export async function getProfile(id) {
+    const response = await client.from('profiles').select('*').match({ id }).single();
+
+    return checkError(response);
+}
+
+export async function saveProfile(profile) {
+    return await client.from('profiles').upsert(profile).single();
+
+    
+}
+
+export async function getProfiles() {
+    const response = await client.from('profiles').select('*');
+
+    return checkError(response);
+}
+
+
