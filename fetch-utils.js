@@ -73,11 +73,11 @@ export async function createPost(post) {
 export async function getProfile(id) {
     const response = await client.from('profiles').select('*').match({ id }).single();
 
-    return response;
+    return checkError(response);
 }
 
 export async function saveProfile(profile) {
-    return await client.from('profiles').upsert(profile);
+    return await client.from('profiles').upsert(profile).single();
 
     
 }
