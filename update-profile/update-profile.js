@@ -1,18 +1,20 @@
-import { saveProfile, getProfile, checkAuth } from '../fetch-utils.js';
+import { saveProfile, getProfile, checkAuth, signOutUser } from '../fetch-utils.js';
 
 const form = document.getElementById('update-form');
 const usernameEl = document.getElementById('username');
 const avatarEl = document.getElementById('avatar');
 const bioEl = document.getElementById('bio');
 const button = document.getElementById('update-create');
+const signOutLink = document.getElementById('sign-out-link');
 
 const user = checkAuth();
-console.log(user.id);
+
+checkAuth();
+
 
 
 async function populateForm() {
     const profile = await getProfile(user.id);
-    console.log('profile', profile);
     if (profile) {
         usernameEl.value = profile.username;
         avatarEl.value = profile.avatar_url;
@@ -31,11 +33,6 @@ form.addEventListener('submit', async (e) => {
     const avatar = data.get('avatar');
     
     await saveProfile({ id: user.id, username: username, bio: bio, avatar_url: avatar });
-
-    const profile = await getProfile(user.id);
-    console.log(profile);
-    
-    
     
     form.reset();
 
@@ -43,3 +40,7 @@ form.addEventListener('submit', async (e) => {
 });
 
 populateForm();
+
+signOutLink.addEventListener('click', signOutUser);
+// make sure we have a user
+checkAuth();
