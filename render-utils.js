@@ -102,4 +102,20 @@ export function renderDetailPost(post) {
     return div;
 }
 
+export function renderProfile(profile) {
+    const div = document.createElement('div');
+    const nameEl = document.createElement('h3');
+    const avatarEl = document.createElement('p');
+    const bioEl = document.createElement('p');
+
+    nameEl.textContent = profile.username;
+    avatarEl.textContent = profile.avatar_url;
+    bioEl.textContent = profile.bio;
+
+    div.append(nameEl, avatarEl, bioEl);
+
+    return div;
+}
+
+
 

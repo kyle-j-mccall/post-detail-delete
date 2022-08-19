@@ -6,6 +6,8 @@ import { renderPosts } from './render-utils.js';
 
 // some "boiler plate" code for:
 // sign out link
+const updateProfileLink = document.getElementById('update-profile-page');
+const viewUsersLink = document.getElementById('users-page');
 const signOutLink = document.getElementById('sign-out-link');
 signOutLink.addEventListener('click', signOutUser);
 // make sure we have a user
@@ -20,5 +22,14 @@ async function displayPosts() {
     bulletinBoard.append(listEls);
     
 }
+
+viewUsersLink.addEventListener('click', () => {
+    window.location.replace('./users');
+});
+
+updateProfileLink.addEventListener('click', () => {
+    window.location.replace('./update-profile');
+
+});
 
 displayPosts();
