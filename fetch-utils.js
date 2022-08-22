@@ -88,4 +88,9 @@ export async function getProfiles() {
     return checkError(response);
 }
 
+export async function getPostsByCategory(category_id) {
+    const response = await client.from('posts').select('*, category: categories(*)').match({ category_id });
+    
+    return response.data;
+}
 
