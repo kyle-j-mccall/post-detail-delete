@@ -21,7 +21,7 @@ body {
     height: 100vh;
     font-family: 'Rubik', san-serif;
     color: var(--text-color);
-    background-color: rgb(64, 57, 74);
+    background-color:rgb(105, 48, 195);
     display: grid;
     grid-template-rows: auto 1fr auto;
     font-family: 'Inconsolata', monospace;
@@ -35,8 +35,8 @@ header {
     display: flex;
     gap: calc(var(--padding) / 2);
     align-items: center;
-    background-color: rgb(28, 20, 39);
-    color: rgb(204, 255, 189);
+    background-color: black;
+    color: white;
     justify-content: center;
     
 }
@@ -75,11 +75,12 @@ nav {
 }
 
 nav a {
-    color: rgb(204, 255, 189);
+    color: white;
 }
 
 main {
     padding: var(--padding);
+    background-image: url(../assets/black-pins.jpg);
 }
 
 footer {
@@ -92,6 +93,22 @@ footer {
     background-color: var(--footer-background);
 }
 
+form {
+    width: 100%;
+    margin: auto;
+    max-width: 500px;
+    border: 1px solid;
+    background: black;
+    padding: var(--padding);
+    color: rgb(128, 255, 219);
+    display: grid;
+    gap: 20px;
+    box-shadow: 6px 9px 6px 0px rgba(5, 56, 31, 0.75);
+-webkit-box-shadow: 6px 9px 6px 0px rgba(5, 56, 31, 0.75);
+-moz-box-shadow: 6px 9px 6px 0px rgba(5, 56, 31, 0.75);
+
+}
+
 
 label {
     display: grid;
@@ -102,7 +119,7 @@ label div {
     font-family: 'Titillium Web';
     font-size: 0.9em;
     font-weight: bold;
-    color: var(--label-color);
+    color:rgb(128, 255, 219);
 }
 
 form input,
@@ -134,10 +151,10 @@ form textarea {
 form button {
     margin-top: 10px;
     height: 45px;
-    background-color:white;
+    background-color: rgb(100, 223, 223);
     border: 0;
     font-weight: bold;
-    color: black;
+    color: rgb(105, 48, 195);
     cursor: pointer;
     border: 2px solid black;
     box-shadow: 2px 5px 6px 0px rgba(171,177,232,0.75);
@@ -151,7 +168,7 @@ form button:hover {
 }
 
 main a {
-    color: rgb(204, 255, 189);
+    color: lightblue;
 }
 
 
